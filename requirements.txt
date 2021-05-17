@@ -1,0 +1,17 @@
+flask;
+SQLAlchemy;
+requests;
+psycopg2;
+jinja2;
+python-dotenv;
+flask-sqlalchemy;
+pandas~=1.2.3;
+Flask~=1.1.2;
+SQLAlchemy~=1.4.2;
+requests~=2.25.1;
+DateTime~=4.3;
+python-dotenv~=0.15.0;
+dash~=1.19.0;
+Flask-WTF;
+Werkzeug~=1.0.1
+plotly~=4.14.3

@@ -1,0 +1,56 @@
+body {
+    font-family: system-ui;
+
+}
+.pagination-page-info  {
+    font-size: 120%;
+}
+.pagination-page-info b {
+
+    padding-left: 1px;
+    padding: .1em .25em;
+
+}
+.hero-body {
+    background-image: url("backOpacity.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: auto;
+
+}
+.table {
+background : rgb(10 10 10 / 6%);
+font-weight: 500;
+width: 92%;
+margin-left: -10px;
+
+}
+.table thead{
+background: #74c8d6;
+
+}
+.pagination-link.is-current {
+    background-color: #74c8d6;
+    border-color: #74c8d6;
+    color: black;
+}
+.pagination.li {
+
+    border-color: #74c8d6;
+}
+#datepicker {
+  /* FONT-WEIGHT: 200; */
+
+    border: 1px solid #74c8d6; */
+}
+.button.is-success{
+    background-color: #74c8d6;
+    color: black
+}
+a.navbar-item {
+    color: #30bcd4;
+}
+
+#react-entry-point{
+
+}

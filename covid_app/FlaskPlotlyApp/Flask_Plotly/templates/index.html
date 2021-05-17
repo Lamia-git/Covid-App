@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if res[0] is defined %}
+<h1 class="title has-text-centered">
+    CORONAVIRUS STATISTIQUES FRANCE – EVOLUTION DU NOMBRE DE CONTAMINATIONS JOUR PAR JOUR <br>
+    Date : {{res[0][0]}}
+</h1>
+<div class="columns">
+    <div class="column is-8">
+        {{ pagination.links }}
+    </div>
+    <div class="column is-4">
+        <form method="post" action="{{url_for('main.index') }}">
+            <div class="field has-addons">
+                <p class="control has-icons-left">
+
+                    <input type="text" id="datepicker" name='searchDate' class=" input" placeholder="Date">
+                    <span class="icon is-small is-left"><i class="far fa-calendar-alt"></i></span>
+                    <input type="hidden" name="calendar-form">
+                </p>
+
+                <div class="control">
+
+                    <button type="submit" value="Search" class="button is-success">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="column is-12 ">
+
+    <table class="table is-hoverable is-large ">
+        <thead>
+        <tr>
+            <th>Region</th>
+            <th>Hospitalises</th>
+            <th>Reanimation</th>
+            <th>Nouvelles Hospitalisations</th>
+            <th>Nouvelles Reanimations</th>
+            <th><abbr title="Décès Reanimations">Décès</abbr></th>
+            <th><abbr title="Guéris">Guéris</abbr></th>
+        </tr>
+        </thead>
+        {% for row in res %}
+        <tr>
+            <td>{{row[1]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+            <td>{{row[5]}}</td>
+            <td>{{row[6]}}</td>
+            <td>{{row[7]}}</td>
+            <td>{{row[9]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {{ pagination.info }}
+</div>
+{% endif %}
+
+{% if res[0] is not defined %}
+<h1 class="title has-text-centered"> DSL pas de données pour la date {{searchDate}}.
+<a href="{{url_for('main.index',searchDate=today)}}"><img src="../static/return.png" alt="return Home" style="width:4%;"></a>
+</h1>
+{% endif %}
+{% endblock %}
